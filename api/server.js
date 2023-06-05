@@ -14,7 +14,9 @@ mongoose.connect('mongodb://127.0.0.1:27017/react-todo', {
 
 // Models
 const Todo = require('./models/Todo');
-
+app.get("/", (req, res) => {
+res.send("api working")
+})
 app.get('/todos', async (req, res) => {
 	const todos = await Todo.find();
 
